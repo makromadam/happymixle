@@ -15,6 +15,14 @@ npm run dev
 npm run build
 ```
 
+Çift tıklanarak açılabilen tek dosyalık sürüm:
+
+```bash
+npm run build:standalone
+```
+
+Bu komut proje kökünde `Happy Mixle (standalone).html` oluşturur.
+
 ## Yayın Öncesi
 
 - `src/config.js` içindeki telefon numarasını güncelleyin.
