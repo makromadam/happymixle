@@ -84,6 +84,18 @@ function App() {
       <Suspense fallback={<div className="fallback-sculpture" aria-hidden="true" />}>
         <WebGLStage quality={quality} />
       </Suspense>
+      <a
+        className="whatsapp-float"
+        href={CONTACT.whatsappUrl}
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Happy Mixle ile WhatsApp üzerinden iletişime geç"
+      >
+        <span className="whatsapp-label">WHATSAPP</span>
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <path d="M16.04 3.2A12.7 12.7 0 0 0 5.1 22.34L3.2 28.8l6.62-1.74a12.76 12.76 0 1 0 6.22-23.86Zm0 22.98c-2.02 0-4-.54-5.72-1.56l-.41-.24-3.93 1.03 1.05-3.82-.27-.43a10.24 10.24 0 1 1 9.28 5.02Zm5.62-7.67c-.31-.15-1.82-.9-2.1-1-.28-.1-.49-.15-.69.15-.2.31-.8 1-1 1.2-.18.21-.36.23-.67.08-.31-.16-1.3-.48-2.48-1.53a9.32 9.32 0 0 1-1.72-2.14c-.18-.31-.02-.48.14-.63.14-.14.31-.36.46-.54.16-.18.21-.31.31-.52.1-.2.05-.38-.02-.54-.08-.15-.7-1.67-.95-2.29-.25-.6-.51-.52-.7-.53h-.59c-.2 0-.54.08-.82.38-.28.31-1.08 1.06-1.08 2.57 0 1.52 1.1 2.98 1.26 3.19.15.2 2.17 3.31 5.25 4.64.73.32 1.3.5 1.75.65.73.23 1.4.2 1.93.12.59-.09 1.82-.75 2.08-1.47.25-.72.25-1.34.18-1.47-.08-.12-.28-.2-.59-.36Z" />
+        </svg>
+      </a>
       <main id="main">
         <section id="manifesto" className="scene hero" data-scene="0">
           <div className="eyebrow">HAPPY MIXLE / YARATICI STÜDYO</div>

@@ -167,6 +167,84 @@ a {
   filter: saturate(1.1) contrast(1.03);
 }
 
+.whatsapp-float {
+  position: fixed;
+  z-index: 30;
+  right: var(--pad);
+  bottom: 1.75rem;
+  display: flex;
+  width: 4rem;
+  height: 4rem;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.8rem;
+  overflow: hidden;
+  padding: 0 1.08rem;
+  color: var(--white);
+  background: var(--orange);
+  border: 1px solid var(--orange);
+  border-radius: 999px;
+  box-shadow: 0 0.8rem 2.6rem rgb(255 90 0 / 30%);
+  text-decoration: none;
+  transition: width 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.whatsapp-float::before {
+  position: absolute;
+  z-index: -1;
+  inset: -0.45rem;
+  content: "";
+  border: 1px solid rgb(255 90 0 / 55%);
+  border-radius: inherit;
+  animation: whatsapp-pulse 2.4s ease-out infinite;
+}
+
+.whatsapp-float svg {
+  width: 1.8rem;
+  min-width: 1.8rem;
+  fill: currentColor;
+}
+
+.whatsapp-label {
+  max-width: 0;
+  overflow: hidden;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  opacity: 0;
+  transform: translateX(0.6rem);
+  transition: max-width 0.45s ease, opacity 0.25s ease, transform 0.45s ease;
+  white-space: nowrap;
+}
+
+.whatsapp-float:hover,
+.whatsapp-float:focus-visible {
+  width: 10.5rem;
+  box-shadow: 0 1rem 3.2rem rgb(255 90 0 / 42%);
+  outline: none;
+  transform: translateY(-0.25rem);
+}
+
+.whatsapp-float:hover .whatsapp-label,
+.whatsapp-float:focus-visible .whatsapp-label {
+  max-width: 6rem;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.86);
+  }
+
+  75%,
+  100% {
+    opacity: 0;
+    transform: scale(1.25);
+  }
+}
+
 .fallback-sculpture::before,
 .fallback-sculpture::after {
   position: absolute;
@@ -713,6 +791,23 @@ footer a {
     display: none;
   }
 
+  .whatsapp-float {
+    right: 1.15rem;
+    bottom: 1.15rem;
+    width: 3.55rem;
+    height: 3.55rem;
+    padding: 0 0.88rem;
+  }
+
+  .whatsapp-float:hover,
+  .whatsapp-float:focus-visible {
+    width: 3.55rem;
+  }
+
+  .whatsapp-label {
+    display: none;
+  }
+
   .scene {
     padding-right: var(--pad);
     padding-left: var(--pad);
@@ -860,5 +955,9 @@ footer a {
     scroll-behavior: auto !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+
+  .whatsapp-float::before {
+    display: none;
   }
 }
